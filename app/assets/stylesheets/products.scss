@@ -1,0 +1,26 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.product-amount {
+  background-color: var(--bg-card);
+  padding: 1rem 0;
+  margin-top: 0;
+}
+
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  align-items: center;
+  column-gap: 2rem;
+  padding: 20px;
+  // box-shadow: 1px 0 4px var(--blue-color);
+}
+
+.date-flex {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 25px;
+  row-gap: 20px;
+}

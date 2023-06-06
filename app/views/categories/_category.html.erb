@@ -1,0 +1,23 @@
+<li>
+<%= link_to category_path(category.id) do %>
+  <div class="category-card">
+    <div class="category-inner">
+      <div>
+        <h2 class="mb-1 md-heading">
+        <%= category.name.capitalize %>
+        </h2>
+        <p class="mb-0 light-text">
+        <%= category.created_at.strftime("%d %b %Y") %>
+        </p>
+      </div>
+    </div>
+  <span class="bold-text">
+  <% if category.total_amount <= 0 %>
+    <h3 class="md-heading black-text bold-text"> <%= category.total_amount %></h3>
+  <% else %>
+    <h3 class="md-heading red-text bold-text"> -<%= category.total_amount %></h3>
+  <% end %>
+  </span>
+  </div>
+<% end %>
+</li>

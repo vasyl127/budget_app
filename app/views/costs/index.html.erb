@@ -1,0 +1,13 @@
+<%= render 'shared/cardform' %>
+<div style="width: 450px;" class="center">
+  <% if @costs.blank? %>
+    <p class="text-center md-heading mt-5" >There are no costs yet!! <br/> Please add a cost</p>
+  <% else %>
+    <h2 class="text-left md-heading"> Resent Transactions</h2>
+    <ul class="cat-list md-heading">
+    <%= render @costs %>
+    </ul>
+  <% end %>
+</div>
+
+

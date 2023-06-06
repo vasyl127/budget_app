@@ -1,0 +1,131 @@
+.category-card {
+  margin: 0 25px 3rem;
+  display: flex;
+  border-radius: 5px;
+  column-gap: 2rem;
+  padding: 15px 20px;
+  align-items: center;
+  box-shadow: 1px 0 4px var(--blue-color);
+  justify-content: space-between;
+}
+
+.category-cardp {
+  margin: 0 25px 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 15px 20px;
+  box-shadow: 1px 0 4px var(--blue-color);
+}
+
+.colored-bg {
+  margin: 0 25px 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 15px 20px;
+  box-shadow: 2px 2px 3px var(--black-color);
+  background-color: var(--blue-color);
+}
+
+.reset {
+  display: flex;
+  column-gap: 0.2rem;
+}
+
+.cat-pro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* .cat-list {
+  a {
+    color: var(--black-color);
+  }
+} */
+
+.category-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.cat-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  border: 2px solid var(--blue-color);
+}
+
+.btn {
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 20px;
+  border: 1px solid var(--bg-card);
+}
+
+.user-icon {
+  font-size: 25px;
+  padding: 3px 10px;
+  color: var(--black-color);
+  border-radius: 50%;
+}
+
+.md-heading {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.close a {
+  font-size: 30px;
+  color: var(--blue-color);
+}
+
+.cat-card {
+  background-color: var(--blue-color);
+  padding: 30px;
+  margin: 25px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px -15px var(--yellow-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.group select {
+  width: 100%;
+}
+
+.group select > option {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+  background-color: var(--black-color);
+  color: var(--blue-color);
+  padding: 10px 0;
+}
+
+.group select > option:first-child {
+  background-color: var(--form-color);
+  color: var(--black-color);
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,37 @@
+<%= render 'shared/cardform' %>
+<div style="width: 450px;" class="center">
+  <% if @categories.size < 1 %>
+    <p class="text-center md-heading mt-5" >There are no categories yet!! <br/> Please add a category</p>
+  <% else %>
+    <h2 class="text-left md-heading"> Resent Transactions</h2>
+    <ul class="cat-list md-heading">
+    <% @categories.each do |category| %>
+      <li>
+      <%= link_to category_path(category.id) do %>
+        <div class="category-card">
+          <div class="category-inner">
+            <div>
+              <h2 class="mb-1 md-heading">
+              <%= category.name.capitalize %>
+              </h2>
+              <p class="mb-0 light-text">
+              <%= category.created_at.strftime("%d %b %Y") %>
+              </p>
+            </div>
+          </div>
+        <span class="bold-text">
+        <% if category.total_amount <= 0 %>
+          <h3 class="md-heading black-text bold-text"> <%= category.total_amount %></h3>
+        <% else %>
+          <h3 class="md-heading red-text bold-text"> -<%= category.total_amount %></h3>
+        <% end %>
+        </span>
+        </div>
+      <% end %>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
+
+

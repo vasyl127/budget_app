@@ -1,0 +1,27 @@
+<li>
+<%= link_to cost_path(cost.id) do %>
+  <div class="category-card">
+    <div class="category-inner">
+      <div>
+        <h2 class="mb-1 md-heading">
+        <%= cost.name.capitalize %>
+        </h2>
+        <p class="mb-0 light-text">
+        <%= cost.created_at.strftime("%d %b %Y") %>
+        </p>
+      </div>
+    </div>
+  <span class="bold-text">
+  <% if cost.value <= 0 %>
+    <h3 class="md-heading black-text bold-text"> <%= cost.value %></h3>
+  <% else %>
+    <% if cost.func == 'minus' %>
+      <h3 class="md-heading red-text bold-text"> -<%= cost.value %></h3>
+    <% else %>
+      <h3 class="md-heading green-text bold-text"> +<%= cost.value %></h3>
+    <% end %>
+  <% end %>
+  </span>
+  </div>
+<% end %>
+</li>
