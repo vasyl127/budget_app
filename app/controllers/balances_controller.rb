@@ -17,6 +17,7 @@ class BalancesController < ApplicationController
   end
 
   def balance_params
-    params.permit(:name, :value).merge(user_id: current_user.id)
+    params.permit(:name, :value)
+          .merge(user_id: current_user.id, currency: ::ExchangeRate::Base.new.return_last.id)
   end
 end

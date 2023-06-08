@@ -6,7 +6,7 @@ class CreateCosts < ActiveRecord::Migration[7.0]
 
       t.string :name
       t.float :value, default: 0
-      t.json :currency
+      t.uuid :currency
 
       t.timestamps
     end

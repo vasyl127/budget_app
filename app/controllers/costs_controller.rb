@@ -63,7 +63,8 @@ class CostsController < ApplicationController
   private
 
   def cost_params
-    params.require(:cost).permit(:name, :value).merge(user_id: current_user.id)
+    params.require(:cost).permit(:name, :value)
+          .merge(user_id: current_user.id, currency: ::ExchangeRate::Base.new.return_last.id)
   end
 
   def cost_by_id

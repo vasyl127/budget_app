@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'balances/new', to: 'balances#new'
   post 'balances/new', to: 'balances#create'
   get 'test', to: 'pages#test'
+  get 'currencies', to: 'currencies#index'
 
   resources :costs
   resources :categories
