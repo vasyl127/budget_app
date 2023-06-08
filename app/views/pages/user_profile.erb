@@ -1,1 +1,30 @@
-<h1> User Profile </h2>
+
+<div class="mt-3 px-3 close"><%= link_to "X", categories_path %></div>
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= image_tag "personal.png", class: "img-fluid rounded-start" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @current_user.name %></h5>
+        <p class="card-text">Email: <%= @current_user.email %></p>
+        <p class="card-text"><small class="text-muted">Sign in count: <%= @current_user.sign_in_count %></small></p>
+        <p class="card-text"><small class="text-muted">Sign in IP: <%= @current_user.current_sign_in_ip %></small></p>
+        <p class="card-text"><small class="text-muted">Last sign in at: <%= @current_user.last_sign_in_at %></small></p>
+        <p class="card-text"><small class="text-muted">Last sign in IP: <%= @current_user.last_sign_in_ip %></small></p>
+        <p class="card-text"><small class="text-muted">Balance: <%= @current_user.balance %></small></p>
+        <p class="card-text"><small class="text-muted">Locale: <%= @current_user.locale %></small></p>
+        <p class="card-text"><small class="text-muted">Created at: <%= @current_user.created_at %></small></p>
+        <p class="card-text"><small class="text-muted">Updated at: <%= @current_user.updated_at %></small></p>
+      </div>
+      <%= link_to 'Change password', edit_user_registration_path, class:'btn btn-outline-warning my-2 mx-3' %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning' %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
