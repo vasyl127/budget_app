@@ -1,10 +1,11 @@
-class BalanceController < ApplicationController
+class BalancesController < ApplicationController
   def new
     @cost = Cost.new
   end
 
   def create
-    @cost = current_user.costs.new(cost_params)
+    @category = current_user.categories.find_by(name: 'up balance')
+    @cost = @category.costs.new(balance_params)
 
     respond_to do |format|
       if @cost.save
@@ -13,5 +14,9 @@ class BalanceController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def balance_params
+    params.permit(:name, :value).merge(user_id: current_user.id)
   end
 end

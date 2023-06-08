@@ -18,7 +18,13 @@ class CostsController < ApplicationController
   def edit; end
 
   def create
-    @cost = current_user.costs.new(cost_params)
+    @category = Category.find(params['cost']['category_id'])
+    @cost = @category.costs.new(cost_params)
+    if @cost.value.positive?
+      value = @cost.value * -1
+
+      @cost.update(value: value)
+    end
 
     respond_to do |format|
       if @cost.save
@@ -48,13 +54,16 @@ class CostsController < ApplicationController
   end
 
   def all_costs
-    @costs = current_user.costs.order(created_at: :desc)
+    @costs = Cost.joins(category: { user_categories: :user })
+                 .where(users: { id: current_user.id })
+                 .order(created_at: :desc)
+
   end
 
   private
 
   def cost_params
-    params.require(:cost).permit(:name, :value)
+    params.require(:cost).permit(:name, :value).merge(user_id: current_user.id)
   end
 
   def cost_by_id

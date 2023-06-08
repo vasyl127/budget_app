@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_072042) do
 
   create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
-    t.string "descripion"
+    t.string "description"
     t.string "owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_072042) do
     t.uuid "category_id"
     t.string "name"
     t.float "value", default: 0.0
-    t.string "func", default: "minus"
     t.json "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

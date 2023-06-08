@@ -6,5 +6,20 @@ class User < ApplicationRecord
 
   has_many :user_categories, dependent: :destroy
   has_many :categories, through: :user_categories
-  has_many :costs, dependent: :destroy
+
+  def value_in_mounth
+    categories.map { _1.costs.where('value < ?', 0)
+                             .where('created_at > ?', Time.now.beginning_of_month).sum(:value) }.sum
+    
+  end
+
+  def total_amount
+    categories.map { _1.costs.where('value < ?', 0).sum(:value) }.sum
+  end
+
+  def add_basic_category
+    categories.create(name: 'none', description: 'Categroy for costs without category')
+    categories.create(name: 'up balance', description: 'Categroy for up balance')
+  end
+
 end

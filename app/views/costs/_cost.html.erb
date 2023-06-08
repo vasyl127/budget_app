@@ -12,15 +12,13 @@
       </div>
     </div>
   <span class="bold-text">
-  <% if cost.value <= 0 %>
-    <h3 class="md-heading black-text bold-text"> <%= cost.value %></h3>
-  <% else %>
-    <% if cost.func == 'minus' %>
-      <h3 class="md-heading red-text bold-text"> -<%= cost.value %></h3>
+    <% if cost.value == 0 %>
+      <h3 class="md-heading black-text bold-text"><%= cost.value %></h3>
+    <%elsif cost.value > 0 %>
+      <h3 class="md-heading green-text bold-text">+<%= cost.value %></h3>
     <% else %>
-      <h3 class="md-heading green-text bold-text"> +<%= cost.value %></h3>
-    <% end %>
-  <% end %>
+      <h3 class="md-heading red-text bold-text"><%= cost.value %></h3>
+    <% end %>  
   </span>
   </div>
 <% end %>

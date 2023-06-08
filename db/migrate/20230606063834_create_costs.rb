@@ -6,7 +6,6 @@ class CreateCosts < ActiveRecord::Migration[7.0]
 
       t.string :name
       t.float :value, default: 0
-      t.string :func, default: 'minus'
       t.json :currency
 
       t.timestamps

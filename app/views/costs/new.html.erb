@@ -1,0 +1,9 @@
+<section>
+  <div class="mt-5 px-5 close"><%= link_to "X", categories_path %></div>
+      <span class="nav-item">
+        <%= link_to categories_path do %>
+          <i class="fas fa-chevron-left text-white"></i>
+        <% end %>
+      </span>
+  <%= render "form" %>
+</section>

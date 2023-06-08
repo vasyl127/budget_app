@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-around align-items-center mt-3" >
+    <div class="user-icon me-2 text-center">
+        <%= link_to costs_path do %>
+            <div><%= fa_icon "money" %></div>
+        <% end %>
+        <p class="fs-6">Costs</p>
+    </div>
+    <div class="user-icon me-2 text-center">
+        <%= link_to categories_path do %>
+            <div><%= fa_icon "list" %></div>
+        <% end %>
+        <p class="fs-6">Categories</p>
+    </div>
+    <div class="user-icon me-2 text-center">
+        <%= link_to 'balances/new' do %>
+            <div><%= fa_icon "credit-card" %></div>
+        <% end %>
+        <p class="fs-6">Balance</p>
+    </div>
+    <div class="user-icon me-2 text-center">
+        <%= link_to 'user_profile' do %>
+            <div><%= fa_icon "bar-chart" %></div>
+        <% end %>
+        <p class="fs-6">Exchange rate</p>
+    </div>
+</div>
