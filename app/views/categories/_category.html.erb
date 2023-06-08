@@ -12,11 +12,13 @@
       </div>
     </div>
   <span class="bold-text">
-  <% if category.total_amount <= 0 %>
-    <h3 class="md-heading black-text bold-text"> <%= category.total_amount %></h3>
-  <% else %>
-    <h3 class="md-heading red-text bold-text"> -<%= category.total_amount %></h3>
-  <% end %>
+    <% if category.total_amount == 0 %>
+      <h3 class="md-heading black-text bold-text"><%= category.total_amount %></h3>
+    <%elsif category.total_amount > 0 %>
+      <h3 class="md-heading green-text bold-text">+<%= category.total_amount %></h3>
+    <% else %>
+      <h3 class="md-heading red-text bold-text"><%= category.total_amount %></h3>
+    <% end %>  
   </span>
   </div>
 <% end %>

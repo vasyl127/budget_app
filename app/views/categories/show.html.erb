@@ -11,17 +11,13 @@
       </div>
     </div>
 
-    <% if current_user.amount - @categories.map { |cat| cat.total_amount }.sum < 1 %>
-        <h3 class="red-text bold-text md-heading d-flex justify-content-end align-items-center px-4 pb-4">No available amount</h3>
-      <% else %>
       <div class="d-flex justify-content-end align-items-center px-4 pb-4">
-      <h3 class="md-heading">Add Product</h3>
+      <h3 class="md-heading">Add Cost</h3>
       <div class="user-icon ms-2">
-        <%= link_to new_category_product_path(@category.id) do %>
+        <%= link_to new_cost_path(@category.id) do %>
         <div><%= fa_icon "plus" %></div>
         <% end %>
       </div>
-      <% end %>
 
 
     
@@ -41,9 +37,9 @@
         </div>
         <span class="red-text bold-text">
           <% if @category.total_amount > 1 %>
-            <h3 class="md-heading red-text bold-text"> -$<%= @category.total_amount %></h3>
+            <h3 class="md-heading red-text bold-text"> <%= @category.total_amount %></h3>
           <% else %>
-            <h3 class="md-heading black-text bold-text"> $<%= @category.total_amount %></h3>
+            <h3 class="md-heading black-text bold-text"> <%= @category.total_amount %></h3>
           <% end %>
         </span>
       </div>
@@ -52,31 +48,31 @@
         <p><%= link_to 'Remove', category_path(@category), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn-dark my-4 p-2" %></p>
       </div>
     </div>
-    <% if @products.empty? %>
-      <p class="text-center fs-5 my-5 sm-heading">There are no products yet!</p>
+    <% if @costs.empty? %>
+      <p class="text-center fs-5 my-5 sm-heading">There are no costs yet!</p>
     <% end %>
     <ul>
-      <% @category.products.each do |product| %>
+      <% @category.costs.each do |cost| %>
         <li class="bold-text">
           <div class="light-text px-4 pb-4">
             <i class="far fa-calendar-alt"></i>
-            <%= product.created_at.strftime("%d %b %Y") %>
+            <%= cost.created_at.strftime("%d %b %Y") %>
           </div>
           <div class="category-cardp">
-            <div class="product-card mb-3">
+            <div class="cost-card mb-3">
               <div>
-                <%= product.name.capitalize %>
+                <%= cost.name.capitalize %>
               </div>
               <div class="light-text">
-                <%= product.created_at.strftime("%r")%>
+                <%= cost.created_at.strftime("%r")%>
               </div>
               <div class="red-text bold-text md-heading">
-                -$<%= product.amount %>
+                <%= cost.value %>
               </div>
             </div>
             <div class="reset">
-              <p><%= link_to 'Edit', edit_category_product_path(@category.id, product.id), method: 'get', class: "signup-btn my-4 p-2" %></p>
-              <p><%= link_to 'Remove', category_product_path(@category.id, product.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn my-4 p-2" %></p>
+              <p><%= link_to 'Edit', edit_cost_path(cost.id), method: 'get', class: "signup-btn my-4 p-2" %></p>
+              <p><%= link_to 'Remove', cost_path(cost.id), method: 'delete', data: { confirm: 'Are you sure?' }, class: "signup-btn my-4 p-2" %></p>
             </div>
           </div>
         </li>

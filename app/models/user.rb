@@ -18,8 +18,8 @@ class User < ApplicationRecord
   end
 
   def add_basic_category
-    categories.create(name: 'none', description: 'Categroy for costs without category')
-    categories.create(name: 'up balance', description: 'Categroy for up balance')
+    categories.create([{ name: 'none', description: 'Categroy for costs without category' },
+                       { name: 'up balance', description: 'Categroy for up balance' }])
   end
 
 end
