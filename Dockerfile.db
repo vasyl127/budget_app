@@ -1,0 +1,11 @@
+FROM postgres:15.2
+
+RUN apt-get update && apt-get install -y cron postgresql-client
+
+ADD backup-replay-database.sh /backup-replay-database.sh
+ADD backup-replay-cron /etc/cron.d/backup-replay
+
+RUN chmod 755 /backup-replay-database.sh
+RUN chmod 755 /etc/cron.d/backup-replay
+
+CMD ["cron", "-f"]

@@ -1,0 +1,30 @@
+# Ignore bundler config.
+/.bundle
+/.env
+/.git
+
+# Ignore all logfiles and tempfiles.
+/dump.rdb
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+# /config/master.key
+# credentials.yml.enc
+
+# Ignore test data
+/coverage
