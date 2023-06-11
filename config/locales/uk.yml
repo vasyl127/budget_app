@@ -1,0 +1,101 @@
+uk:
+  en: Англійська
+  uk: Українська
+  activerecord:
+    models:
+      category: "Категорія"
+      cost: "Витрата"
+    attributes:
+      category:
+        name: "Назва"
+        description: "Опис"
+      cost:
+        name: "Назва"
+        value: "Значення"
+  costs:
+    create:
+      success: "Витрату успішно створено!"
+    update:
+      success: "Витрату успішно оновлено!"
+    destroy:
+      success: "Витрату успішно видалено!"
+    index:
+      title: "Останні транзакції"
+      blank: "Поки що немає витрат!"
+      add: "Будь ласка, додайте витрату"
+    edit:
+      title: "РЕДАГУВАТИ ВИТРАТУ"
+      submit: "ДОДАТИ"
+    form:
+      title: "Створити витрату"
+      submit: "ДОДАТИ"
+      name: "Назва"
+      value: "Значення"
+  balances:
+    create:
+      success: "Баланс успішно додано!"
+    form:
+      title: "Додати до балансу"
+      submit: "ДОДАТИ"
+      name: "Назва"
+      value: "Значення"
+  categories:
+    create:
+      success: "Категорію успішно створено!"
+    update:
+      success: "Категорію успішно оновлено!"
+    destroy:
+      success: "Категорію успішно видалено!"
+    form:
+      title: "Створити категорію"
+      submit: "ДОДАТИ"
+      name: "Назва"
+      description: "Опис"
+    edit:
+      title: "РЕДАГУВАТИ КАТЕГОРІЮ"
+    index:
+      title: "Категорії"
+      blank: "Поки що немає категорій!"
+      add: "Будь ласка, додайте категорію"
+    show:
+      add_cost: "Додати Витрату"
+      blank_cost: "Поки що немає витрат!"
+      delete_msg: "Ви впевнені?"
+    category:
+      none: Без категорії
+      up_balance: Поповнення балансу
+  currencies:
+    currency_tables:
+      bank: "Банк (Купівля/Продаж)"
+      cash: "Готівка (Купівля/Продаж)"
+  shared:
+    basic_buttons:
+      costs: "Витрати"
+      categories: "Категорії"
+      balance: "Баланс"
+      exchange_rate: "Курс валют"
+    creditcard:
+      in_this_mount: "У цьому місяці"
+      balance: "Баланс"
+    second_buttons:
+      add_cost: "Додати Витрату"
+      add_category: "Додати Категорію"
+  splash:
+    first_screen:
+      title: "Додаток для Бюджетування"
+      header: "Ласкаво просимо у ваш особистий додаток для бюджетування"
+      message: "Це веб-додаток, який дозволяє вам відстежувати витрати та доходи"
+      sign_up: "ЗАРЕЄСТРУВАТИСЬ"
+      log_in: "УВІЙТИ"
+  pages:
+    user_profile:
+      email: "Електронна пошта"
+      sign_in_count: "Кількість входів"
+      current_sign_in_ip: "IP поточного входу"
+      last_sign_in_at: "Останній вхід о"
+      last_sign_in_ip: "IP останнього входу"
+      balance: "Баланс"
+      created_at: "Створено о"
+      updated_at: "Оновлено о"
+      change_password: "Змінити пароль"
+      sign_out: "Вийти"

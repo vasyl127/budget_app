@@ -3,24 +3,24 @@
         <%= link_to costs_path do %>
             <div><%= fa_icon "money" %></div>
         <% end %>
-        <p class="fs-6">Costs</p>
+        <p class="fs-6"><%= t('.costs') %></p>
     </div>
     <div class="user-icon me-2 text-center">
         <%= link_to categories_path do %>
             <div><%= fa_icon "list" %></div>
         <% end %>
-        <p class="fs-6">Categories</p>
+        <p class="fs-6"><%= t('.categories') %></p>
     </div>
     <div class="user-icon me-2 text-center">
         <%= link_to 'balances/new' do %>
             <div><%= fa_icon "credit-card" %></div>
         <% end %>
-        <p class="fs-6">Balance</p>
+        <p class="fs-6"><%= t('.balance') %></p>
     </div>
     <div class="user-icon me-2 text-center">
         <%= link_to 'currencies' do %>
             <div><%= fa_icon "bar-chart" %></div>
         <% end %>
-        <p class="fs-6">Exchange rate</p>
+        <p class="fs-6"><%= t('.exchange_rate') %></p>
     </div>
 </div>

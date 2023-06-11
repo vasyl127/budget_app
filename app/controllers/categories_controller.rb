@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         current_user.categories << @category
-        format.html { redirect_to categories_url, notice: 'Category was successfully created!.' }
+        format.html { redirect_to categories_url, notice: t('.success') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -39,14 +39,14 @@ class CategoriesController < ApplicationController
 
     @category.update(category_params)
 
-    redirect_to categories_path(@category), notice: 'Category was successfully updated!.'
+    redirect_to categories_path(@category), notice: t('.success')
   end
 
   def destroy
 
     @category.destroy
 
-    redirect_to categories_url, notice: 'Category was successfully deleted!'
+    redirect_to categories_url, notice: t('.success')
   end
 
   private

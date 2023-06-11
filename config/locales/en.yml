@@ -1,33 +1,101 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  en: English
+  uk: Ukranian
+  activerecord:
+    models:
+      category: Category
+      cost: Cost
+    attributes:
+      category:
+        name: Name
+        description: Description
+      cost:
+        name: Name
+        value: Value
+  costs:
+    create:
+      success: Category was successfully created!
+    update:
+      success: Category was successfully updated!
+    destroy:
+      success: Category was successfully deleted!
+    index:
+      title: Resent Transactions
+      blank: There are no costs yet!!
+      add: Please add a cost
+    edit:
+      title: EDIT COST
+      submit: ADD
+    form:
+      title: CREATE COST
+      submit: ADD
+      name: Name
+      value: Value
+  balances:
+    create:
+      success: Balance was successfully added!
+    form:
+      title: Add to balance
+      submit: ADD
+      name: Name
+      value: Value
+  categories:
+    create:
+      success: Category was successfully created!
+    update:
+      success: Category was successfully updated!
+    destroy:
+      success: Category was successfully deleted!
+    form:
+      title: CREATE CATEGORY
+      submit: ADD
+      name: Name
+      description: Description
+    edit:
+      title: EDIT CATEGORY
+    index:
+      title: Categories
+      blank: There are no categories yet!!
+      add: Please add a category
+    show:
+      add_cost: Add Cost
+      blank_cost: There are no costs yet!
+      delete_msg: Are you sure?
+    category:
+      none: None
+      up_balace: Up balance
+  currencies:
+    currency_tables:
+      bank: Bank (Buy\Sale)
+      cash: Cash (Buy\Sale)
+  shared:
+    basic_buttons:
+      costs: Costs
+      categories: Categories
+      balance: Balance
+      exchange_rate: Exchange rate
+    creditcard:
+      in_this_mount: In this mount
+      balance: Balance
+    second_buttons:
+      add_cost: Add Cost
+      add_category: Add Category
+  splash:
+    first_screen:
+      title: Budget App
+      header: Welcome to your personal budget app
+      message: This is a web application that allows you to keep track of your expenses and income
+      sign_up: SIGN UP
+      log_in: LOG IN
+  pages:
+    user_profile:
+      email: Email
+      sign_in_count: Sign in count
+      current_sign_in_ip: Sign in IP
+      last_sign_in_at: Last sign in at
+      last_sign_in_ip: Last sign in IP
+      balance: Balance
+      created_at: Created at
+      updated_at: Updated at
+      change_password: Change password
+      sign_out: Sign out

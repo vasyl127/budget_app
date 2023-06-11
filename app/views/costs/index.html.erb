@@ -2,9 +2,9 @@
 <div style="width: 450px;" class="center">
   <%= render 'shared/second_buttons' %>
   <% if @costs.blank? %>
-    <p class="text-center md-heading mt-5" >There are no costs yet!! <br/> Please add a cost</p>
+    <p class="text-center md-heading mt-5" ><%= t('.blank') %> <br/> <%= t('.add') %></p>
   <% else %>
-    <h2 class="text-left md-heading"> Resent Transactions</h2>
+    <h2 class="text-left md-heading"> <%= t('.title') %> </h2>
     <ul class="cat-list md-heading">
     <%= render @costs %>
     </ul>

@@ -28,7 +28,7 @@ class CostsController < ApplicationController
 
     respond_to do |format|
       if @cost.save
-        format.html { redirect_to costs_url, notice: 'Cost was successfully created!.' }
+        format.html { redirect_to costs_url, notice: t('.success') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -44,14 +44,14 @@ class CostsController < ApplicationController
     @category = Category.find(params['cost']['category_id'])
     @cost.update(cost_params.merge(category_id: @category.id))
 
-    redirect_to category_path(@category), notice: 'Cost was successfully updated!.'
+    redirect_to category_path(@category), notice: t('.success')
   end
 
   def destroy
 
     @cost.destroy
 
-    redirect_to costs_url, notice: 'Cost was successfully deleted!'
+    redirect_to costs_url, notice: t('.success')
   end
 
   def all_costs

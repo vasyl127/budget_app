@@ -9,7 +9,7 @@ class BalancesController < ApplicationController
 
     respond_to do |format|
       if @cost.save
-        format.html { redirect_to costs_url, notice: 'Balance was successfully added!' }
+        format.html { redirect_to costs_url, notice: t('.success') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

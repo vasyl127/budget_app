@@ -8,18 +8,17 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><%= @current_user.name %></h5>
-        <p class="card-text">Email: <%= @current_user.email %></p>
-        <p class="card-text"><small class="text-muted">Sign in count: <%= @current_user.sign_in_count %></small></p>
-        <p class="card-text"><small class="text-muted">Sign in IP: <%= @current_user.current_sign_in_ip %></small></p>
-        <p class="card-text"><small class="text-muted">Last sign in at: <%= @current_user.last_sign_in_at %></small></p>
-        <p class="card-text"><small class="text-muted">Last sign in IP: <%= @current_user.last_sign_in_ip %></small></p>
-        <p class="card-text"><small class="text-muted">Balance: <%= @current_user.balance %></small></p>
-        <p class="card-text"><small class="text-muted">Locale: <%= @current_user.locale %></small></p>
-        <p class="card-text"><small class="text-muted">Created at: <%= @current_user.created_at %></small></p>
-        <p class="card-text"><small class="text-muted">Updated at: <%= @current_user.updated_at %></small></p>
+        <p class="card-text"><%= t('.email') %>: <%= @current_user.email %></p>
+        <p class="card-text"><%= t('.sign_in_count') %>: <%= @current_user.sign_in_count %></p>
+        <p class="card-text"><%= t('.current_sign_in_ip') %>: <%= @current_user.current_sign_in_ip %></p>
+        <p class="card-text"><%= t('.last_sign_in_at') %>: <%= l @current_user.last_sign_in_at, format: :long %></p>
+        <p class="card-text"><%= t('.last_sign_in_ip') %>: <%= @current_user.last_sign_in_ip %></p>
+        <p class="card-text"><%= t('.balance') %>: <%= @current_user.balance %></p>
+        <p class="card-text"><%= t('.created_at') %>: <%= l @current_user.created_at, format: :long %></p>
+        <p class="card-text"><%= t('.updated_at') %>: <%= l @current_user.updated_at, format: :long %></p>
       </div>
-      <%= link_to 'Change password', edit_user_registration_path, class:'btn btn-outline-warning' %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning' %>
+      <%= link_to t('.change_password'), edit_user_registration_path, class:'btn btn-outline-warning' %>
+      <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-warning' %>
     </div>
   </div>
 </div>

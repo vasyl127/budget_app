@@ -11,16 +11,13 @@
       </div>
     </div>
 
-      <div class="d-flex justify-content-end align-items-center px-4 pb-4">
-      <h3 class="md-heading">Add Cost</h3>
-      <div class="user-icon ms-2">
-        <%= link_to new_cost_path(@category.id) do %>
-        <div><%= fa_icon "plus" %></div>
-        <% end %>
-      </div>
-
-
-    
+    <div class="d-flex justify-content-end align-items-center px-4 pb-4">
+    <h3 class="md-heading"><%= t('.add_cost') %></h3>
+    <div class="user-icon ms-2">
+      <%= link_to new_cost_path(@category.id) do %>
+      <div><%= fa_icon "plus" %></div>
+      <% end %>
+    </div>
 
     </div>
     <div class="colored-bg">
@@ -45,11 +42,11 @@
       </div>
       <div class="reset">
         <p><%= link_to 'Edit', edit_category_path(@category), method: 'get', class: "signup-btn-dark my-4 p-2" %></p>
-        <p><%= link_to 'Remove', category_path(@category), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "signup-btn-dark my-4 p-2" %></p>
+        <p><%= link_to 'Remove', category_path(@category), data: { turbo_method: :delete, turbo_confirm: t('.delete_msg') }, class: "signup-btn-dark my-4 p-2" %></p>
       </div>
     </div>
     <% if @costs.empty? %>
-      <p class="text-center fs-5 my-5 sm-heading">There are no costs yet!</p>
+      <p class="text-center fs-5 my-5 sm-heading"><%= t('.blank_cost') %></p>
     <% end %>
     <ul>
       <% @category.costs.each do |cost| %>
@@ -78,7 +75,7 @@
             </div>
             <div class="reset">
               <p><%= link_to 'Edit', edit_cost_path(cost.id, {category_id: @category.id}), method: 'get', class: "signup-btn my-4 p-2" %></p>
-              <p><%= link_to 'Remove', cost_path(cost.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "signup-btn my-4 p-2" %></p>
+              <p><%= link_to 'Remove', cost_path(cost.id), data: { turbo_method: :delete, turbo_confirm: t('.delete_msg') }, class: "signup-btn my-4 p-2" %></p>
             </div>
           </div>
         </li>
