@@ -36,14 +36,15 @@ class CostsController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params['category_id'])
 
   end
 
   def update
+    @category = Category.find(params['cost']['category_id'])
+    @cost.update(cost_params.merge(category_id: @category.id))
 
-    @cost.update(cost_params)
-
-    redirect_to costs_path(@cost), notice: 'Cost was successfully updated!.'
+    redirect_to category_path(@category), notice: 'Cost was successfully updated!.'
   end
 
   def destroy
@@ -56,8 +57,7 @@ class CostsController < ApplicationController
   def all_costs
     @costs = Cost.joins(category: { user_categories: :user })
                  .where(users: { id: current_user.id })
-                 .order(created_at: :desc)
-
+                 .order(updated_at: :desc)
   end
 
   private

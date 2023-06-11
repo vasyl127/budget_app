@@ -60,6 +60,6 @@ class CategoriesController < ApplicationController
   end
 
   def all_categories
-    @categories = current_user.categories
+    @categories = current_user.categories.order(updated_at: :desc)
   end
 end
