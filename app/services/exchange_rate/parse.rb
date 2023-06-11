@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'json'
 
@@ -7,8 +9,8 @@ module ExchangeRate
     BANK_URL = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11'
 
     def call
-      { usd: {'bank' => bank_currency['USD'], 'cash' => cash_currency['USD'] },
-        eur: {'bank' => bank_currency['EUR'], 'cash' => cash_currency['EUR'] } }
+      { usd: { 'bank' => bank_currency['USD'], 'cash' => cash_currency['USD'] },
+        eur: { 'bank' => bank_currency['EUR'], 'cash' => cash_currency['EUR'] } }
     end
 
     def cash_currency
@@ -30,6 +32,7 @@ module ExchangeRate
 
       @bank_currency ||= hash
     end
+
     def url_to_hash(url)
       JSON.parse(Net::HTTP.get_response(URI.parse(url)).body)
     end

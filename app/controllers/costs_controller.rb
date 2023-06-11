@@ -1,13 +1,12 @@
+# frozen_string_literal: true
+
 class CostsController < ApplicationController
-  before_action :cost_by_id, only: %i[ show edit update destroy ]
-  before_action :all_costs, only: %i[ index show ]
+  before_action :cost_by_id, only: %i[show edit update destroy]
+  before_action :all_costs, only: %i[index show]
 
-  def index
-
-  end
+  def index; end
 
   def show
-
     # @costs = @cost.costs
   end
 
@@ -23,7 +22,7 @@ class CostsController < ApplicationController
     if @cost.value.positive?
       value = @cost.value * -1
 
-      @cost.update(value: value)
+      @cost.update(value:)
     end
 
     respond_to do |format|
@@ -37,7 +36,6 @@ class CostsController < ApplicationController
 
   def edit
     @category = Category.find(params['category_id'])
-
   end
 
   def update
@@ -48,7 +46,6 @@ class CostsController < ApplicationController
   end
 
   def destroy
-
     @cost.destroy
 
     redirect_to costs_url, notice: t('.success')

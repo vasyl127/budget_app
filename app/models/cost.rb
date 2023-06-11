@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Cost < ApplicationRecord
   after_create :upd_user_balance_after_create
   after_destroy :upd_user_balance_after_destroy
@@ -19,6 +21,6 @@ class Cost < ApplicationRecord
   end
 
   def user_for_cost
-    User.joins(user_categories: { category: :costs }).where(costs: { id: id })
+    User.joins(user_categories: { category: :costs }).where(costs: { id: })
   end
 end

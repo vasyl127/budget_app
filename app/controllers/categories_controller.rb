@@ -1,14 +1,12 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
-  before_action :category_by_id, only: %i[ show edit update destroy ]
-  before_action :all_categories, only: %i[ index show ]
+  before_action :category_by_id, only: %i[show edit update destroy]
+  before_action :all_categories, only: %i[index show]
 
-
-  def index
-
-  end
+  def index; end
 
   def show
-
     @costs = @category.costs
   end
 
@@ -31,19 +29,15 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
-
     @category.update(category_params)
 
     redirect_to categories_path(@category), notice: t('.success')
   end
 
   def destroy
-
     @category.destroy
 
     redirect_to categories_url, notice: t('.success')

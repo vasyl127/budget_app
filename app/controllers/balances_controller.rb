@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BalancesController < ApplicationController
   def new
     @cost = Cost.new

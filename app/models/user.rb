@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -8,9 +10,10 @@ class User < ApplicationRecord
   has_many :categories, through: :user_categories
 
   def value_in_mounth
-    categories.map { _1.costs.where('value < ?', 0)
-                             .where('created_at > ?', Time.now.beginning_of_month).sum(:value) }.sum
-    
+    categories.map do
+      _1.costs.where('value < ?', 0)
+        .where('created_at > ?', Time.now.beginning_of_month).sum(:value)
+    end.sum
   end
 
   def total_amount
@@ -21,5 +24,4 @@ class User < ApplicationRecord
     categories.create([{ name: 'none', description: 'Categroy for costs without category' },
                        { name: 'up balance', description: 'Categroy for up balance' }])
   end
-
 end
